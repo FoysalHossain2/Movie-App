@@ -3,11 +3,14 @@ import { getImgUrl } from "../utils/cine-utility";
 import MovieDetailsModel from "./MovieDetailsModel";
 import Rating from "./Rating";
 
+import { useContext } from "react";
+import { MovieContext } from "../context/MovieContext";
+
 const MovieCard = ({ movie }) => {
   const [showModal, setShowModal] = useState(false);
   const [SelectedMovie, setSelectedMovie] = useState(null);
 
-  // const { cartData, setCartData } = useContext(MovieContext);
+  const { cartData, setCartData } = useContext(MovieContext);
 
   const handleModelClose = () => {
     setSelectedMovie(null);
